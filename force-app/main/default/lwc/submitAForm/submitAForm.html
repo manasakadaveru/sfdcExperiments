@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <div>
+            <lightning-input label="First Name" value={firstName}></lightning-input>
+            <lightning-input label="Last Name" value={firstName}></lightning-input>
+            <lightning-input label="Middle Name" value={firstName}></lightning-input>
+        </div>
+        <div>
+            <lightning-input type="checkbox" label="Agree ?" onclick={handleCheckbox} checked={isChecked}></lightning-input>
+        </div>
+        <div>
+            <lightning-button label="Submit" variant="brand" onclick={handleButton} disabled={isDisabled}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

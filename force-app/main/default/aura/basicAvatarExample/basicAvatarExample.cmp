@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    
+    <div style="background-color:#00ddcc ; margin:12px" class="slds-box">
+		<lightning:avatar src="/Desktop/portfolio_header.jpg" 
+                      initials="" 
+                      fallbackIconName="custom:custom66" 
+                      alternativeText="Bob Wilson"
+                      class="slds-m-right_small">
+   		</lightning:avatar>
+       
+        <lightning:badge label="ManaS"/>
+        
+        <lightning:badge label="StartIcon" iconName="utility:success"/>
+        <lightning:badge label="End Position" iconName="utility:success" iconPosition="end"/>
+    </div>
+</aura:component>

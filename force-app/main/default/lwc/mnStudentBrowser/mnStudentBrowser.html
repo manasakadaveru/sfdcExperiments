@@ -1,0 +1,23 @@
+<template>
+
+    <div class="slds-box slds-theme_shade">
+        <c-mn-student-filter></c-mn-student-filter>
+    </div>
+
+    <lightning-tabset variant="default">
+
+        <lightning-tab label="Gallery">
+
+            <c-mn-student-tiles student-list={studentList}></c-mn-student-tiles>
+
+        </lightning-tab>
+
+        <lightning-tab label="Grid">
+           
+            <c-mn-student-table student-list={studentList}></c-mn-student-table>
+                    
+        </lightning-tab>
+ 
+    </lightning-tabset> 
+
+</template>

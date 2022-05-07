@@ -1,0 +1,29 @@
+<aura:component controller="StudentRecordUpdation" implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+<aura:attribute name="showSpinner" type="Boolean" default="true" />
+   
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }"/>
+   
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner variant="brand" class="slds-show backgroundSpinner" size="medium" alternativeText="{!v.status}"/>
+    </aura:if>
+   
+    <aura:html tag="style">
+        .slds-backdrop {
+            background: rgba(43, 40, 38, 0) !important;
+        }
+        .backgroundSpinner{
+            background: rgba(0, 0, 0, 0) !important;
+        }
+        .modal-body {
+            background: rgba(0, 0, 0, 0) !important;
+            box-shadow: none !important;
+        }
+        .closeIcon {
+            display:none !important;
+        }
+        .desktop {
+            overflow: visible !important;
+        }
+    </aura:html>
+   
+</aura:component>

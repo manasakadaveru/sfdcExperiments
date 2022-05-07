@@ -1,0 +1,35 @@
+<template>
+
+    <lightning-card title="Student Details">
+        <template if:true={studentId}>
+            <div slot="actions">
+                <lightning-button label="View" onclick={viewRecord}></lightning-button>
+                <lightning-button label="Edit" onclick={editRecord}></lightning-button>
+                <lightning-button label="New" onclick={newRecord}></lightning-button>
+            </div>
+            
+                              
+            <lightning-record-view-form record-id={studentId} object-api-name="Contact">
+
+                <div class="slds-box slds-theme_shade">
+                    <lightning-output-field field-name="FirstName"></lightning-output-field>
+                    <lightning-output-field field-name="LastName"></lightning-output-field>
+                    <lightning-output-field field-name="Email"></lightning-output-field>
+                    <lightning-output-field field-name="Phone"></lightning-output-field>
+                </div>
+
+                <div class="slds-box slds-theme_shade">
+                    <lightning-output-field field-name="MailingCity"></lightning-output-field>
+                    <lightning-output-field field-name="MailingCountry"></lightning-output-field>
+                </div>             
+
+            </lightning-record-view-form>
+        </template>
+
+        <div slot="footer" >
+            <c-student-map student-id={studentId}></c-student-map>
+        </div>
+        
+    </lightning-card>
+
+</template>

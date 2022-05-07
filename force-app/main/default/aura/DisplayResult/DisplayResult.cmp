@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:attribute name="Get_Result" type="String"/>
+    <aura:handler event="c:ResultEventInpToOutP" action="{!c.getValueFromApplicationEvent}"/>
+    The result is {!v.Get_Result}
+</aura:component>

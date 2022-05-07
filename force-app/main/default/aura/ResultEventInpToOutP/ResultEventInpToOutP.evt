@@ -1,0 +1,5 @@
+<aura:event type="APPLICATION" description="Event template">
+
+    <aura:attribute name="PassResult" type="String"/>
+
+</aura:event>

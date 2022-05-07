@@ -1,0 +1,39 @@
+<!--<template>
+    <lightning-button label="Load All Opportunites" onclick={loadOpportunities}></lightning-button>
+</template>-->
+
+<template>
+    <lightning-card title="ImperativeMethod">
+        <div slot="actions">
+            <lightning-button label="Load All Opportunites" onclick={loadOpportunities}></lightning-button>
+            <lightning-button label="Load Own Opportunites" onclick={OwnOpportunities}></lightning-button>
+        </div>
+
+        <div slot="footer"> <p>this example shows how to call an apex method imperatively</p> </div>
+        
+    <div class="slds-m-around_medium">
+        <table class="slds-table slds-table_bordered">
+            <thead>
+                <th>Name</th>
+                <th>StageName</th>
+                <th>Amount</th>
+                <th>Tax</th>
+            </thead>
+            <tbody>
+                <template for:each={opporTaxList} for:item="opp">
+                    <tr key={opp.Id}>
+                        <!--<td><a key={opp.Id} data-key={opp.Id} onclick={openOppRecord}>{opp.Name}</a></td>-->
+                        <td>{opp.Name}</td>
+                        <td>{opp.Stage}</td>
+                        <td>{opp.Amount}</td>
+                        <td>{opp.Tax}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+    
+    </lightning-card>
+    
+    
+</template>

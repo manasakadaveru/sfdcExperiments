@@ -1,0 +1,161 @@
+<template>
+    <lightning-card title="Account with Contacts using wrapper class in LWC" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <label for="FieldSelect" class="slds-form-element__label slds-no-flex">
+                <abbr title="required" class="slds-required">*</abbr>
+                Select Product
+            </label>
+
+            
+                <template if:true={accountsWithContacts}>
+                    <select class="slds-select" name = "optionSelect" onchange={changeHandler}>
+                    <option value="None">--None--</option>    
+                        <template for:each={accountsWithContacts} for:item="accWithContacts">
+                        <!--<div key={accWithContacts.accRecord.Id}>
+                            <li key={accWithContacts.accRecord.Id}>-->
+                            
+                            <option key={accWithContacts.accRecord.Id} value={accWithContacts.accRecord.Id}>{accWithContacts.accRecord.Name}</option>
+                            
+                        </template>
+                    </select>  
+
+                </template>
+
+                <div class="slds-p-around_medium lgc-bg">
+                    <template if:true={accountsWithContacts}>
+                        <template for:each={accountsWithContacts} for:item="accWithContacts">
+                            <lightning-tree-grid
+                                columns={accWithContacts.accRecord.Name}
+                                data={accWithContacts.accRecord.Name}
+                                key={accWithContacts.accRecord.Name}
+                            ></lightning-tree-grid>
+                        </template>
+                    </template>                    
+                </div>
+                
+                <!--<div>                
+                    <template if:true={contactsRelateToAcc}>// comments
+                        <template for:each={contactsRelateToAcc} for:item="contcts">
+                            <div key={contcts.Id}>
+                                {contcts.Name}
+                                <template for:each={contcts} for:item="con"> // comments
+                                    <li key={con.Id}>{con.Name}</li>// comments
+                                </template>// comments
+                            </div>
+                        </template>
+                    </template>  // comments             
+                </div>-->
+                <!--<template for:each={contactsRelateToAcc} for:item="contcts">
+                    <div class="slds-form-element" key={contcts.Id} onclick={handleDiv}>
+                        <div class="slds-form-element__control">
+                          <div class="slds-checkbox">
+                            <input type="checkbox" name="options" value="" checked={checkboxValue} onchange={handleCheckbox} />
+                            <label class="slds-checkbox__label" for="checkbox-unique-id-73">
+                              <span class="slds-checkbox_faux"></span>
+                              <span class="slds-form-element__label">{contcts.Name}</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                </template>-->
+                <template for:each={contactsRelateToAcc} for:item="option">
+                    <div class="slds-form-element slds-p-around_xx-small " key={option.Id} onclick={getContId}>
+                        <div class="slds-grid" >
+                            <div class="slds-col">
+                                <!-- <c-button-in-lwc option={option.Id} selected={selected} onradiovaluechange={radioValuChange} radio-value={radioValue}></c-button-in-lwc> -->
+                                
+                                    <section class="slds-accordion__section">
+                                        <div class="slds-accordion__summary">
+                                            <h2 class="slds-accordion__summary-heading">
+                                                <button class="slds-button slds-button_reset slds-accordion__summary-action" aria-controls="referenceId-44" aria-expanded="false" title="Accordion summary">
+                                                    <span class="slds-accordion__summary-content">Acc</span>
+                                                </button>
+                                            </h2>
+                                        </div>
+                                        <div hidden="" class="slds-accordion__content">Accordion details - C</div>
+                                    </section>
+                                
+                            </div>
+                            <div class="slds-col radioLeft" style="padding-right:50%; margin-left: 10%;">
+                                <lightning-input type="radio" 
+                                name="seloption"
+                                label={option.Name}
+                                value={option.Id}
+                                checked={option.checkboxValue} 
+                                onchange={onCheckBoxClick}></lightning-input>
+                            </div> 
+                        </div>                                                                                
+                    </div>
+                </template>
+
+                <!-- <template for:each={accountsWithContacts} for:item="accCont">
+                    <div class="slds-form-element slds-p-around_xx-small " key={accCont.contactList.Id} onclick={getContId}>
+                        
+                                <lightning-radio-group type="radio" 
+                                name="seloption"
+                                label={accCont.contactList.Name}
+                                value={accCont.contactList.Id}
+                                checked={accCont.checkboxValue} 
+                                onchange={onCheckBoxClick}
+                                data-id = "Globalregion"></lightning-radio-group>
+                                                                                                           
+                    </div>
+                </template>
+                 -->
+                       
+           
+                <!--<template if:true={accountsWithContacts}>
+                    <template for:each={accountsWithContacts} for:item="accWithContacts">
+                        <div key={accWithContacts.accRecord.Id}>
+                            <div class="slds-text-heading_medium">{accWithContacts.accRecord.Name}</div>
+                            <template if:true={accWithContacts.contactList}>
+                                Contacts Count is {accWithContacts.contactCount}. Here is list:
+                                <ul class="slds-list_dotted">
+                                    <template for:each={accWithContacts.contactList} for:item="con">
+                                        <li key={con.Id}>{con.Name}</li>
+                                    </template>
+                                </ul>
+                            </template>
+                        </div>
+                    </template>
+                </template>-->
+            <template if:true={error}>
+                {error}
+            </template>
+             
+
+        </div>
+    </lightning-card>
+        <!-- <div class="slds-box">
+            <lightning-card >
+                <span class="radio"></span>
+                <span class="label"><lightning-input type="radio" label="Basic option" name="input1" value="bbb" onclick={getRadioValue}></lightning-input></span>
+                <lightning-input type="radio" label="Basic option" name="input1" value="bbb" onclick={getRadioValue}></lightning-input>
+                <lightning-input type="radio" label="Basic option" name="input1" value="aaa" onclick={getRadioValue}></lightning-input>
+                
+            </lightning-card>
+            <p slot="footer">Email Field Value is:- {aaa}</p>
+
+            <input type='radio' label="Basic option" />
+            <input type='radio' name="gender"/>
+        </div>
+        <label class="radio-label">
+            <div class="opt-container">
+              <input type="radio" name="gender" class="radio-button" value="m" checked="checked">
+              <span class="new-button"></span>
+              <div class="button-label">
+                Male
+              </div>
+            </div>
+          </label>
+          <label class="radio-label">
+            <div class="opt-container">
+              <input type="radio" name="gender" class="radio-button" value="f">
+              <span class="new-button"></span>
+              <div class="button-label">
+                Female
+              </div>
+            </div>
+          </label> -->
+    
+</template>

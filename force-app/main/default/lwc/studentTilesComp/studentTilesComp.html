@@ -1,0 +1,9 @@
+<template>
+    <div class="slds-box slds-theme_shade">
+
+        <template for:each={studentList} for:item="std">
+            <c-student-tile key={std.Id} student={std} std-id={stdId} ontileclick={handleTileClick}></c-student-tile>
+        </template>
+        
+    </div>
+</template>

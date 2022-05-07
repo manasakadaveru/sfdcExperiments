@@ -1,0 +1,14 @@
+.THIS.slds-p-around--medium {
+            padding: 0rem !important;
+        }   
+.THIS.slds-modal__content{
+            overflow-y:hidden !important;
+            height:unset !important;
+            max-height:unset !important;
+        }
+.THIS.cuf-content {
+            padding: 0 0rem !important;
+        }
+.THIS.slds-spinner_container{
+    background: none;
+}

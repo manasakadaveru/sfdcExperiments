@@ -1,0 +1,35 @@
+<template>
+    <p class="slds-text-heading_large">{activeSectionMessage}</p>
+    <lightning-button onclick={handleSetActiveSectionA} label="Open Section A"></lightning-button>
+    <lightning-button onclick={handleSetActiveSectionB} label="Open Section B"></lightning-button>
+    <lightning-button onclick={handleSetActiveSectionC} label="Open Section C"></lightning-button>
+
+    <!-- <lightning-accordion class="ex-accordion" onsectiontoggle={handleToggleSection} active-section-name="Select"> -->
+    
+        <template if:true={accountsWithContacts}>
+            <template for:each={accountsWithContacts} for:item="accWithContacts">
+                <lightning-accordion key={accWithContacts.accRecord.Id}>
+                    <lightning-accordion-section name={accWithContacts.accRecord.Id} label={accWithContacts.accRecord.Name}>
+                        <p>This is content area for A....</p>
+                        <p>......AAAA-----------AAAA.....</p>   
+                    </lightning-accordion-section>
+                </lightning-accordion>                
+            </template>            
+        </template>
+
+        <!-- <lightning-accordion-section name="B" label="Accordion Title B">
+            <p>This is content area for B....</p>
+            <p>......AAAA-----------AAAA.....</p>            
+        </lightning-accordion-section>
+                
+        <lightning-accordion-section name="B" label="Accordion Title B">
+            <p>This is content area for A....</p>
+            <p>......AAAA-----------AAAA.....</p>   
+        </lightning-accordion-section>
+
+        <lightning-accordion-section name="C" label="Accordion Title C">
+            <p>This is content area for A....</p>
+            <p>......AAAA-----------AAAA.....</p>   
+        </lightning-accordion-section>
+    </lightning-accordion> -->
+</template>

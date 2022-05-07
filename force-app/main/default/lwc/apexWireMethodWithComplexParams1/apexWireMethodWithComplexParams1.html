@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="apexWireMethodComplex Class" icon-name="custom:custom2">
+        <div class="slds-m-around_medium">
+            <lightning-input type="String" label="String" value={stringValue} class="string-input" 
+                onchange={handleStringChange}></lightning-input>
+            <lightning-input type="number" label="List Items" value={listValue} class="list-item-input"
+                min="0" max="10" onchange={handleListChange}></lightning-input>
+
+                <template if:true={paramResp.data}>
+                    <p>{paramResp.data}</p>
+                </template>
+
+        </div>
+        <template if:true={paramResp.error}>
+            <c-error-panel errors={error}></c-error-panel>
+        </template>
+    </lightning-card>
+</template>

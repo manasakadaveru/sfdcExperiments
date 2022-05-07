@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="WirePropertyEx" icon-name="custom:custom63">
+        <div>
+            <lightning-button label="Load Contacts" variant="success" onclick={handleLoadingContacts}></lightning-button>
+        
+            <template if:true={contactsData}>
+                <template for:each={contactsData} for:item="cont">
+                    <p key={cont.Id}> {cont.Name} </p>
+                </template>
+            </template>
+            <template if:true={errorData}>
+                <p>Error Occurred</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

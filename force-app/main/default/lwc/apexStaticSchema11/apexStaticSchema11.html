@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="SendingEmailThroughStaticSchema" icon-name="custom:custom3">
+        <template if:true={contact.data}>
+            <div class="slds-m-around_medium">
+            
+                <p>{name}</p>
+                <lightning-formatted-email value={email}></lightning-formatted-email>
+                <p>click on name to send email!!</p>
+                
+            </div>
+        </template>
+        
+        <template if:true={contact.error}>
+            <c-error-panel errors={contact.error}></c-error-panel>
+        </template>
+
+    </lightning-card>
+</template>

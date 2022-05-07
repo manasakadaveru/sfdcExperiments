@@ -1,0 +1,3 @@
+<aura:component >
+	<p>{!$Label.c.Example_CL}</p>
+</aura:component>

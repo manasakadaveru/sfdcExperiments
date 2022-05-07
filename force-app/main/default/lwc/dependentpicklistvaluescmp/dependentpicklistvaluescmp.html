@@ -1,0 +1,31 @@
+<template>
+    <lightning-record-edit-form onload={handleLoadComplete} onsuccess={handleSuccess} onsubmit ={handleSubmit} 
+                                object-api-name="Account">
+        <lightning-messages></lightning-messages>
+        
+        <template if:true={openLWC}>
+            <lightning-input-field field-name="isActive__c" value={icChecked}>
+            </lightning-input-field>
+            
+            <!--<lightning-input class="" type="checkbox" label="Is Active ?" checked = "false">
+            </lightning-input>-->
+    
+            <lightning-input-field field-name="Active__c">
+            </lightning-input-field>
+            <lightning-input-field field-name="Phone">
+            </lightning-input-field>
+            <lightning-input-field field-name="Name">
+            </lightning-input-field>
+        </template>        
+
+        <template if:false={recordFormOpen}>
+            <lightning-button label="OpenLWC Form" class="slds-m-top_medium" onclick={handleClick}> </lightning-button>
+        </template>
+        
+        <template if:true={recordFormOpen}>
+            <lightning-button class="slds-m-top_small" type="submit" label="Create Account"> </lightning-button>
+        </template>        
+
+    </lightning-record-edit-form>
+    
+</template>

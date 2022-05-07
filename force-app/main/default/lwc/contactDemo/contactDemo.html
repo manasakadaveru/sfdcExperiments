@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Contacts Associated with Accounts" >
+ 
+        <!-- <div class="slds-m-around_medium">
+            <template if:true={contact.data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={contact.data}
+                    columns={columns}
+                    onsave={handleSave}
+                    draft-values={draftValues}>
+                </lightning-datatable>
+            </template>
+            <template if:true={contact.error}>                
+            </template>
+        </div> -->
+
+        <div class="slds-m-around_medium">
+            <template if:true={workorder.data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={workorder.data}
+                    columns={woColumns}
+                    onsave={handleWOSave}
+                    draft-values={draftValues}>
+                </lightning-datatable>
+            </template>
+            <template if:true={workorder.error}>                
+            </template>
+        </div>
+        
+    </lightning-card> 
+</template>

@@ -1,0 +1,19 @@
+<template>
+    
+    <lightning-card>
+
+        
+        <c-child-to-parent-lwc onchangeprogressbar={handleChangeProgressBar}></c-child-to-parent-lwc>
+
+        <lightning-progress-bar
+            value={progressValue}
+            size="large"
+        >
+
+        </lightning-progress-bar>
+
+
+    </lightning-card>
+
+    
+</template>

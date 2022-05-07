@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Conditional Rendering" icon-name="custom:custom7">
+        <div class="slds-m-around_medium">
+            <lightning-input type="checkbox" label="Details" onchange={handleChange}></lightning-input>
+            <div class="slds-m-vertical_medium">
+                <template if:true={visibilityOfDetails}>
+                    Details are showing!!!
+                </template>
+                <template if:false={visibilityOfDetails}>
+                    Details are hidden!!
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

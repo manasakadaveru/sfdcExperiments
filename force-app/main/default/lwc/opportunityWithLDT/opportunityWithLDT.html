@@ -1,0 +1,35 @@
+<template>
+
+    
+            <template if:true={showModal}>
+                <c-modal-comp modal-title="Info Msg" 
+                              modal-message="This feature is not available"
+                              onclose={handleClose}></c-modal-comp>
+            </template>
+
+            <lightning-card title="Opp's Using LDT">
+
+                <div slot="actions">
+                    <lightning-button label="Send Email" onclick={displayModal}></lightning-button>
+                    <lightning-button label="DELETE" variant="brand" onclick={handleDelete}></lightning-button>
+                </div>
+
+                <div class="slds-box">
+                    selected :::: {oppId}
+                </div>
+        
+                <lightning-datatable columns={oppCols} 
+                                     data={oppList} 
+                                     max-row-selection="1"
+                                     key-field="Id"
+                                     onrowselection={handleRowSelection} >
+        
+                </lightning-datatable>
+        
+            </lightning-card>
+
+            <div class="slds-box">
+                <c-cert-popularity> </c-cert-popularity>
+            </div>
+            
+</template>

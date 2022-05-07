@@ -1,0 +1,10 @@
+.contentCSS{
+    border-bottom: 1px solid blueviolet;
+    width: fit-content;
+    padding: 20%;    
+}
+.center{
+    margin: auto;
+    width: 60%;
+    /*padding: 100%;*/
+}

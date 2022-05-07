@@ -1,0 +1,3 @@
+<aura:component >
+    <p>{!$Label.c.Custom_Label_In_Aura}</p>
+</aura:component>

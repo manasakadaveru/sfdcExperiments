@@ -1,0 +1,126 @@
+<template>
+<lightning-card>
+    <!-- <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout slds-table_striped">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Typical Column Header">Typical Column Header</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Truncated, no wrap">Truncated, no wrap</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="Typical Column Header">Typical Column Header</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="slds-hint-parent">
+                <td data-label="Typical Column Header" scope="row">
+                    <div class="slds-truncate" title="Typical cell content">
+                    <lightning-formatted-number
+                            value="5000"
+                            format-style="currency"
+                            currency-code="USD">
+                    </lightning-formatted-number>
+                    </div>
+                </td>
+                <td class="slds-cell-wrap" data-label="Truncated, no wrap">
+                    <div class="slds-truncate" title="Cell content that is very long.
+                    It also has a line break.
+                    It has more than one line break">Cell content that is very long. It also has a line break. It has more than one line break</div>
+                </td>
+                <td data-label="Typical Column Header">
+                    <div class="slds-truncate" title="Typical cell content">Typical cell content</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+    <article class="slds-card">
+        <ul class="slds-accordion">
+            <li class="slds-accordion__list-item">
+                <section class="slds-accordion__section slds-is-open">
+                    <div class="slds-accordion__summary">
+                        <h2 class="slds-accordion__summary-heading">
+                            <button class="slds-button slds-button_reset slds-accordion__summary-action" aria-controls="referenceId-13" aria-expanded="true" title="Accordion summary Accordion summary Accordion summary Accordion summary Accordion summary Accordion summary Accordion summary Accordion summary Accordion summary Accordion summary">
+                                <svg class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>
+                                </svg>
+                                <span class="slds-accordion__summary-content">Accordion summary Accordion summary Accordion summary Accordion summary Accordion summary Accordion summary Accordion summary Accordion summary Accordion summary Accordion summary</span>
+                            </button>
+                        </h2>
+                    </div>
+                    <div class="slds-accordion__content" id="referenceId-13">Accordion details - A</div>
+                </section>
+            </li>
+
+            <li class="slds-accordion__list-item">
+            <section class="slds-accordion__section">
+            <div class="slds-accordion__summary">
+            <h2 class="slds-accordion__summary-heading">
+            <button class="slds-button slds-button_reset slds-accordion__summary-action" aria-controls="referenceId-14" aria-expanded="false" title="Accordion summary">
+            <svg class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>
+            </svg>
+            <span class="slds-accordion__summary-content">Accordion summary 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</span>
+            </button>
+            </h2>
+            </div>
+            <div hidden="" class="slds-accordion__content" id="referenceId-14">Accordion details - B</div>
+            </section>
+            </li>
+
+            <li class="slds-accordion__list-item">
+            <section class="slds-accordion__section">
+            <div class="slds-accordion__summary">
+            <h2 class="slds-accordion__summary-heading">
+            <button class="slds-button slds-button_reset slds-accordion__summary-action" aria-controls="referenceId-15" aria-expanded="false" title="Accordion summary">
+            <svg class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>
+            </svg>
+            <span class="slds-accordion__summary-content">Accordion summary</span>
+            </button>
+            </h2>
+            </div>
+            <div hidden="" class="slds-accordion__content" id="referenceId-15">Accordion details - C</div>
+            </section>
+            </li>
+        </ul>
+    </article>
+    </div>
+    <div>
+        <lightning-layout-item>
+            <dl class="slds-list_horizontal slds-wrap" style="align-items: flex-end">
+        
+                <dt class="slds-item_label slds-text-color_weak" style="width: 40%" >PN :: </dt>
+                <dd class="slds-item_detail slds-truncate" style="width: 60%" >1209741082</dd>                                                                    
+        
+                <dt class="slds-item_label slds-text-color_weak" style="width: 40%" >NUPrice :::</dt>
+                <dd class="slds-item_detail slds-truncate" style="width: 60%">
+                    <lightning-formatted-number
+                    value="5000"
+                    format-style="currency"
+                    currency-code="USD">
+                    </lightning-formatted-number></dd>         
+        
+            </dl>
+        </lightning-layout-item>
+    </div> -->
+
+
+
+    <div class="slds-p-bottom_xx-small">                           
+        <select class="slds-select" name = "productOption" onchange={changeHandler1}>
+            <option value="productpkg">Choose Prod1</option>
+            <option value="productpkg">Choose Prod2</option>
+            <option value="productpkg">Choose Prod3</option>
+            <option value="productpkg">Choose Prod4</option>       
+        </select>
+    </div> 
+    <div>
+        <lightning-input class="inputValue" type="Number" data-id="counter" value={inputValue} variant="label-hidden" 
+                            min=0  onchange={handleInputChange} placeholder="0"></lightning-input>
+    </div> 
+</lightning-card>
+</template>

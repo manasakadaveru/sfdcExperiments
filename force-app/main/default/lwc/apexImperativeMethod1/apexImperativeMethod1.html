@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Imperative Calling" icon-name="custom:custom6">
+        <div class="slds-m-around_medium">
+            <lightning-button type="button" label="Load Contacts" onclick={handleLoad}></lightning-button>            
+        </div>
+        <ul class="slds-m-around_bottom">
+            <template if:true={contacts}>
+                <template for:each={contacts} for:item="cont">
+                   
+                    <li key={cont.Id}>
+                        <div if:true={cont.first} class="list-first"></div>
+                        {cont.Name}   havung phone number:   {cont.Phone}
+                        <div if:true={cont.last} class="list-last"></div>
+                    </li>
+                </template>
+            </template>
+            
+            <template if:true={error}>
+                <c-error-panel errors={error}></c-error-panel>
+            </template>
+        </ul>
+    </lightning-card>
+</template>

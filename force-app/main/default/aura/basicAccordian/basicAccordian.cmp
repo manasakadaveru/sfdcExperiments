@@ -1,0 +1,51 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    
+    <aura:attribute name="isDVisible" type="Boolean" default="false" />
+    <aura:attribute name="activeSectionsMessage" type="String" default="" />
+    <aura:attribute name="activeSections" type="List" default="['B']" />   
+    
+<div class="slds-box" style="background-color:white">
+   
+    	<p>{! v.activeSectionsMessage}</p>   
+     
+    <!--<lightning:button variant="brand" label="Show Active Section Name" onclick="{! c.showActiveSection}" ></lightning:button>
+    <lightning:button variant="brand" label="Open Section Name" onclick="{! c.showOpenSectionAlert}" class="slds-m-right_x-small"></lightning:button>
+    <br/>
+    <br/>
+	<lightning:button variant="brand" label="Show Toggle Session" onclick="{! c.showToggleSession}"></lightning:button>-->
+    
+    <lightning:accordion activeSectionName="{! v.activeSections }" allowMultipleSectionsOpen="true"
+ 							onsectiontoggle="{! c.handleSectionToggle }"  
+                         > 
+        <lightning:accordionSection name="A" label="SectionA">
+        	<aura:set attribute="actions">
+            	<lightning:buttonMenu aura:id="menu" alternativeText="showMenu" iconSize="x-small" menuAlignment="left">
+                    <lightning:menuItem value="New" label="One Item"/>                    	
+                    <lightning:menuItem value="Edit" label="Two Item"/>
+                </lightning:buttonMenu>
+            </aura:set>
+            <aura:set attribute="body">
+            	<p>........A......</p>
+            </aura:set>
+        </lightning:accordionSection>
+        
+        <lightning:accordionSection name="B" label="SectionB">
+        	<aura:set attribute="actions">
+            	<lightning:buttonMenu aura:id="menu" alternativeText="showMenu" iconSize="x-small" menuAlignment="left">
+                    <lightning:menuItem value="New" label="One Item"/>                    	
+                    <lightning:menuItem value="Edit" label="Two Item"/>
+                </lightning:buttonMenu>
+            </aura:set>
+            <aura:set attribute="body">
+            	<p>........B......</p>
+            </aura:set>
+        </lightning:accordionSection>
+        
+        <aura:if isTrue="{! v.isDVisible}">
+            <lightning:accordionSection name="C" label="SectionC">
+            	<p>.......C.......</p>
+            </lightning:accordionSection>        
+        </aura:if>
+    </lightning:accordion>
+</div>   
+</aura:component>

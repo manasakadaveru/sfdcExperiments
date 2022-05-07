@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="HelloBinding1" icon-name="custom:custom13">
+        <div class="slds-m-around_medium">
+            <p>{greeting}, World!</p>
+            <lightning-input
+                label="Name"
+                value={greeting}
+                onchange={handleChange}></lightning-input>
+                <c-view-source source="lwc/helloBinding" slot="footer"></c-view-source>                
+        </div>      
+              
+    </lightning-card>
+</template>

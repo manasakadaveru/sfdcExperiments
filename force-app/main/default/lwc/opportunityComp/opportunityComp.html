@@ -1,0 +1,26 @@
+<template>
+
+    <lightning-card title="Wired a Property">
+        <div class="slds-m-around_medium" title="Wired a Property">
+            <table class="slds-table slds-table_bordered">
+                <thead>
+                    <th>Name</th>
+                    <th>StageName</th>
+                    <th>Amount</th>
+                </thead>
+                <tbody>
+                    <template for:each={oppList.data} for:item="opp">
+                        <tr key={opp.Id}>
+                            <!--<td><a key={opp.Id} data-key={opp.Id} onclick={openOppRecord}>{opp.Name}</a></td>-->
+                            <td>{opp.Name}</td>
+                            <td>{opp.StageName}</td>
+                            <td>{opp.Amount}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+    
+    
+</template>

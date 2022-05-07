@@ -1,0 +1,38 @@
+<aura:component controller="Pavan_PickList_PopUpFieldWindow" implements="force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name="description" type="String"/>  
+    <aura:attribute name="status" type="String"/> 
+    <aura:attribute name="recordEditForm" type="boolean" default="false"/>  
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:if isTrue="{!v.recordEditForm}">
+        <lightning:recordEditForm recordId="{!v.recordId}" objectApiName="Case" >
+            <div class="slds-grid slds-gutters slds-show" aura:id="newButtonDiv">
+                <div class="slds-col slds-size_1-of-1">                
+                    <lightning:inputField aura:id="casenumber" 
+                                          fieldName="CaseNumber"
+                                          required="false" 
+                                          disabled="false"/>               
+                    <lightning:inputField aura:id="description" 
+                                          fieldName="Description"
+                                          required="false" 
+                                          disabled="false"/>                
+                    <lightning:inputField aura:id="status" 
+                                          fieldName="Status__c"
+                                          onchange="{!c.isClosed}"
+                                          required="false" 
+                                          disabled="false"/>                
+                </div>
+                <div class="slds-text-align_center ">
+                    <lightning:button variant="brand" 
+                                      onclick="{!c.handleSaveButton}"
+                                      label="Save"/>
+                    
+                </div>   
+            </div>
+            
+            
+        </lightning:recordEditForm>
+    </aura:if>
+    
+</aura:component>

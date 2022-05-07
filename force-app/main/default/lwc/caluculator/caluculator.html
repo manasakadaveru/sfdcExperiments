@@ -1,0 +1,24 @@
+<template>
+    <!-- we access properties and functions using {} like {propName} {funName}
+            in Aura {! v.propName} and {! c.funName}-->
+        <lightning-card title="Caluculator">
+            <div class="slds-box slds-theme_shade">
+                <lightning-input label="First Number" type="number" onchange={onFirstNumChange}></lightning-input>
+                <lightning-input label="Sceond Number" type="number" value={secondNumber} onchange={onSecondNumChange}></lightning-input>
+            </div>  
+            <template if:true={result}>
+                <div class="slds-box slds-theme_shade myfont">
+                    Result = {result}
+                </div>
+            </template>  
+            
+            <div class="slds-box slds-theme_shade" slot="actions">
+                <lightning-button label="Addition" onclick={add}></lightning-button>
+                <lightning-button label="Substraction" onclick={sub}></lightning-button>
+                <lightning-button label="Multiplication" onclick={mult}></lightning-button>
+                <lightning-button label="Division" onclick={div}></lightning-button>
+    
+            </div>
+        </lightning-card>
+       
+</template>

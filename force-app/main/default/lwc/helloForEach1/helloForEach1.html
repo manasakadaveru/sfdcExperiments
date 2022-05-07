@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="ForEach" icon-name="custom:custom9">
+        <ul class="slds-m-around_medium">
+            <!--<template for:each={contacts} for:item="contact">
+                <li key={contact.id}>
+                    {contact.name}, {contact.role}
+                    
+                </li>
+            </template>-->
+            <template iterator:it={contacts}>
+                <li key={it.value.id}>
+                    <div if:true={it.first} class="list-first"></div>
+                    {it.value.name} {it.value.role}
+                    <div if:true={it.last} class="list-last"></div>
+                </li>
+            </template>
+        </ul>         
+    </lightning-card>
+</template>

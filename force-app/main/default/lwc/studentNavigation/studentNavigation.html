@@ -1,0 +1,38 @@
+<template>
+    
+    <div class="slds-box slds-theme_shade">
+        <lightning-vertical-navigation onselect={handleSelect}>
+
+
+            <lightning-vertical-navigation-section label="Browse">
+                <lightning-vertical-navigation-item-icon label="Student Browser" 
+                                                            name="students" icon-name="utility:groups">
+
+                </lightning-vertical-navigation-item-icon>
+
+                <lightning-vertical-navigation-item-icon label="Case Report" 
+                                                            name="casereports" icon-name="utility:cases">
+
+                </lightning-vertical-navigation-item-icon>
+
+                <lightning-vertical-navigation-item-icon label="Opportunity Graph" 
+                                                            name="opportunitygraphs" icon-name="utility:metrics">
+
+                </lightning-vertical-navigation-item-icon>                
+            </lightning-vertical-navigation-section>
+
+
+            <lightning-vertical-navigation-section label="Accounts">
+                <lightning-vertical-navigation-overflow>
+                    <template for:each={accList.data} for:item="acc">
+                        <lightning-vertical-navigation-item key={acc.Id} label={acc.Name} name={acc.Id}>
+
+                        </lightning-vertical-navigation-item>
+                    </template>
+                </lightning-vertical-navigation-overflow>
+            </lightning-vertical-navigation-section>
+
+        </lightning-vertical-navigation>
+    </div>
+       
+</template>

@@ -1,0 +1,12 @@
+<template>
+    <lightning-record-edit-form>
+        <div>
+            <a href={showPanelUrl} onclick={handleShowPanelClick}>Show Panel</a>
+        </div>
+        <div if:true={showPanel}>
+            <h1>This is the panel</h1>
+            <lightning-input-field field-name="Name"></lightning-input-field>
+            <a href={noPanelUrl} onclick={handleNoPanelClick}>Hide Panel</a>
+        </div>
+    </lightning-record-edit-form>
+</template>

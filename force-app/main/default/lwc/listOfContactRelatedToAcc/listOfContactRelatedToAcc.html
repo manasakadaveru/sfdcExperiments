@@ -1,0 +1,61 @@
+<template>
+
+    <lightning-card title="Contacts Associated with Accounts" >
+
+        <div class="slds-m-around_medium">
+            <template if:true={contact.data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={contact.data}
+                    columns={columns}
+                    onsave={handleSave}
+                    draft-values={draftValues}>
+                </lightning-datatable>
+            </template>
+            <template if:true={contact.error}>
+            </template>
+        </div>
+    </lightning-card>
+
+<!--   <template if:true={contacts.data}>
+        <lightning-card title="Contacts Associated with Account" icon-name="standard:Contact">
+            <table class="slds-table slds-table_bordered slds-table_striped">
+                <thead>
+                    <tr>
+                        <th scope="col"><span class="slds-truncate">FirstName</span></th>
+                        <th scope="col"><span class="slds-truncate">LastName</span></th>
+                        <th scope="col"><span class="slds-truncate">Email</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={contacts.data} for:item="contact">
+                        <tr key={contact.Id}>
+                            <td>{contact.FirstName}</td>
+                            <td>{contact.LastName}</td>
+                            <td>{contact.Email}</td>
+                        </tr>
+                    </template>
+                    <div class="slds-m-around_medium">
+                        <template if:true={contact.data} >
+                            <lightning-datatable
+                            key-field="Id"
+                            data={contact.data}
+                            columns={columns}
+                            onsave={handleSave}
+                            draft-values={draftValues}>
+                                <tr key={contact.Id}>
+                                    <td>{contact.FirstName}</td>
+                                    <td>{contact.LastName}</td>
+                                    <td>{contact.Email}</td>
+                                </tr>
+                            </lightning-datatable>
+                        </template>
+                        <template if:true={contact.error}>
+                        </template>
+                    </div>
+                  
+            </table>
+        </lightning-card>
+    </template>
+-->
+</template>

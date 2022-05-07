@@ -1,0 +1,37 @@
+<template>
+
+    <!--<c-modal-comp modal-message="Welcome to LWC Modal Case Study" modal-title="Message"></c-modal-comp>-->
+
+    
+
+    <lightning-layout>
+
+        <lightning-layout-item size="2">
+            <c-student-navigation onnavigation={handleStudentNavigation}></c-student-navigation>
+        </lightning-layout-item>
+
+        <template if:true={browserSelected}>
+            <lightning-layout-item size="6">
+                <c-student-browser></c-student-browser>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="4">
+                <c-student-detail></c-student-detail>
+            </lightning-layout-item>
+        </template>
+
+        <template if:true={caseReports}>
+            <lightning-layout-item size="10">
+                <c-case-report></c-case-report>
+            </lightning-layout-item>
+        </template>
+
+        <template if:true={opportunityGraphs}>
+            <lightning-layout-item size="10">
+                <c-opportunity-with-l-d-t></c-opportunity-with-l-d-t>
+            </lightning-layout-item>
+        </template>
+
+    </lightning-layout> 
+    
+</template>

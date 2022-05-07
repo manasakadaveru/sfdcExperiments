@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="ApexWiredProperty" icon-name="custom:custom8">
+    <!--<div class="slds-m-around_medium">
+        <template if:true={contacts.data}>
+            <template for:each={contacts.data} for:item="cont">
+                <p key={cont.Id}>{cont.Name}</p>
+            </template>
+        </template>
+        
+        <template if:true={contacts.error}>
+            <c-error-panel errors={contacts.error}></c-error-panel>
+        </template>
+    </div>-->
+    <!--The above one is wired to a property and the below one is wired to a function-->
+
+    <div class="slds-m-around_medium">
+        <template if:true={contacts}>
+            <template for:each={contacts} for:item="cont">
+                <p key={cont.Id}>{cont.Name} --> {cont.Email}</p>
+            </template>
+        </template>
+        <template if:true={error}>
+            <c-error-panel errors={error}></c-error-panel>
+        </template>
+    </div>
+</lightning-card>
+</template>

@@ -1,0 +1,45 @@
+<template>
+    <!-- <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head> -->
+    <div class="container">
+        <div class="row">
+            <h2>Simple Quantity increment buttons with Javascript </h2>
+            
+            
+                            <div class="col-lg-2">
+                                            <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
+                                              <span class="glyphicon glyphicon-minus"></span>
+                                            </button>
+                                        </span>
+                                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="10" min="1" max="100">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                            </div>
+        </div>
+    </div>
+    <!-- Change the `data-field` of buttons and `name` of input field's for multiple plus minus buttons-->
+    <div class="input-group plus-minus-input">
+        <div class="input-group-button">
+            <button type="button" class="button hollow circle" data-quantity="minus" data-field="quantity">
+                <i class="fa fa-minus" aria-hidden="true"></i>
+            </button>
+        </div>
+        <input class="input-group-field" type="number" name="quantity" value="0">
+        <div class="input-group-button">
+            <button type="button" class="button hollow circle" data-quantity="plus" data-field="quantity">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+  
+  
+</template>

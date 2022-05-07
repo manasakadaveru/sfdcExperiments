@@ -1,0 +1,24 @@
+<template>
+    Student Table
+
+    <table class="slds-table slds-table_bordered" >
+        <thead>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Account Name</th>
+        </thead>
+        <tbody>
+            <template for:each={studentList} for:item="std">
+                <tr key={std.Id} data-id={std.Id}>
+                    <td>{std.Name}</td>
+                    <td>{std.Title}</td>
+                    <td>{std.Phone}</td>
+                    <td>{std.Email}</td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+
+</template>

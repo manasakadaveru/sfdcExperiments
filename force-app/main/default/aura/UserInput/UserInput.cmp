@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable">
+    <aura:registerEvent name="loadMyEvent" type="c:ResultEventInpToOutP"/>
+    <p>From Parent Comp</p>
+    <div>
+        <ui:inputText aura:id="Input1" label="First Name" required="true"/>
+        <ui:inputText aura:id="Input2" label="Last Name" required="true"/>
+        <div>
+            <ui:button label="Sum" press="{!c.add}"/>        
+        </div>
+    </div>
+</aura:component>

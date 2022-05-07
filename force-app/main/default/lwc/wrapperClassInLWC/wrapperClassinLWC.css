@@ -1,0 +1,69 @@
+.THIS .slds-checkbox {
+    display: inline !important;
+}
+
+.label {
+    float: left;
+    clear: none;
+    display: block;
+    padding: 0px 1em 0px 8px;
+}
+
+.slds-radio {  
+    display: inline !important;  
+}
+
+.radioLeft
+{
+    text-align:left;
+}
+
+.opt-container {
+    position: relative;
+    max-width: 80%;
+    left: 100px;
+    cursor: pointer;
+    font-size: 22px;
+    margin-bottom: 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .opt-container input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .button-label {
+    position: relative;
+    background-color: #DCDCDC;
+    border-radius: 5px;
+    max-width: 660px;
+    left: 50px;
+    padding-left: 10px;
+  }
+  
+  .radio-label {
+    cursor: pointer;
+  }
+  
+  .new-button {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  .opt-container:hover .new-button,
+  .opt-container:hover .button-label {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .opt-container input:checked~.new-button,
+  .opt-container input:checked~.button-label {
+    background-color: #0ecf4b;
+  }

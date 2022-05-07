@@ -1,0 +1,27 @@
+<template>
+
+    <div class="slds-modal slds-fade-in-open slds-backdrop">
+
+        <div class="slds-modal__container">
+
+            <div class="slds-modal__header">
+                <lightning-button-icon icon-name="utility:close" 
+                                       alternative-text="Close Window"
+                                       size="large"
+                                       onclick={closeModal}
+                                       class="slds-modal__close"></lightning-button-icon>
+                {modalTitle}  
+            </div>
+
+            <div class="slds-modal__content">
+                {modalMessage}
+            </div>
+
+            <div class="slds-modal__footer">
+                <lightning-button label="close" variant="brand" onclick={closeModal}> </lightning-button>
+            </div>
+        </div>
+
+    </div>
+
+</template>

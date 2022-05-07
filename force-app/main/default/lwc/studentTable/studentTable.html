@@ -1,0 +1,27 @@
+<template>
+
+    <!--<div class="slds-box slds-theme_shade">
+        We have seleccted :: {stdId}
+    </div>-->
+   
+        <table class="slds-table slds-table_bordered">
+            <thead>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </thead>
+            <tbody>
+                <template for:each={studentList} for:item="std"> 
+                    <tr key={std.Id} onclick={handleRowClick} data-id={std.Id}>
+                        <!--<td><a key={opp.Id} data-key={opp.Id} onclick={openOppRecord}>{opp.Name}</a></td>-->
+                        <td>{std.Name}</td>
+                        <td>{std.Title}</td>
+                        <td>{std.Phone}</td>
+                        <td>{std.Email}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+ 
+</template>

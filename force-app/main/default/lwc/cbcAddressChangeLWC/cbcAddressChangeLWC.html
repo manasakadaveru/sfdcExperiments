@@ -1,0 +1,46 @@
+<template>
+    <div class="acc-container">
+        <lightning-record-view-form record-id={recordId} object-api-name="Account">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-output-field field-name="BillingStreet"></lightning-output-field>
+                    <lightning-output-field field-name="BillingCity"></lightning-output-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-output-field field-name="BillingState"></lightning-output-field>
+                    <lightning-output-field field-name="BillingCountry"></lightning-output-field>
+                </div>
+            </div>
+        </lightning-record-view-form>
+        <!-- <lightning-record-edit-form object-api-name="Account" record-id={recordId}> -->
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <!-- <lightning-input-field field-name="BillingStreet"></lightning-input-field> -->
+                    <lightning-input-field field-name="Dummy_City__c"></lightning-input-field>
+                </div>
+                <!-- <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field field-name="BillingState"></lightning-input-field>
+                    <lightning-input-field field-name="BillingCountry"></lightning-input-field>
+                </div> -->
+            </div>
+            <div class="slds-var-m-top_medium">
+                <lightning-button
+                    variant="brandP" type="submit" label="Save" onclick={handleSubmit}>
+                </lightning-button>
+            </div>
+        <!-- </lightning-record-edit-form>  -->
+
+        <div class="slds-var-m-top_medium" style="height: 300px;">
+            <template if:true={contact.data}>
+                <lightning-datatable
+                    key-field="id"
+                    data={contact.data}
+                    columns={columns}>
+                </lightning-datatable>
+            </template>
+            <template if:true={contact.error}>                
+            </template>
+        </div>
+
+    </div>
+</template>

@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    <div class="slds-box" style="background-color:orange"> 
+        <p>Navigation with BreadCrumbs</p>
+        <lightning:breadcrumbs>
+            <lightning:breadcrumb label="devOrg"
+                                  href="https://developer.salesforce.com/">
+            </lightning:breadcrumb>
+            <lightning:breadcrumb label="devOrg"
+                                  href="https://developer.salesforce.com/">
+            </lightning:breadcrumb>
+        </lightning:breadcrumbs>        
+    </div>
+</aura:component>

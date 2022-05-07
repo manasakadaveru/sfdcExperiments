@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Static Resource Example LWC" icon-name="custom:custom19">
+        <template if:true = {showImage}>
+            <div class="slds-m-around_medium">
+                <img src={beachWibes}>
+            </div>
+        </template>
+        <template if:false = {showImage}>
+            <lightning-button label="Open" onclick={handleClick}></lightning-button>
+        </template>
+        
+    </lightning-card>
+</template>

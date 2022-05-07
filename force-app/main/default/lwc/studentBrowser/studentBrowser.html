@@ -1,0 +1,17 @@
+<template>
+    <div>
+        <c-student-filter></c-student-filter>
+    </div>
+
+    <lightning-tabset variant="scoped">
+                
+        <lightning-tab label="Gallery" title="Displaying contact details in picture format">
+            <c-student-tiles-comp ontileclick={handleStudentClick} student-list={studentList}></c-student-tiles-comp>
+        </lightning-tab>
+
+        <lightning-tab label="Grid" title="Displaying contact details in tabular format">
+            <c-student-table std-id={selectedStudentId} ontableclick={handleStudentClick} student-list={studentList}></c-student-table>
+        </lightning-tab>
+
+    </lightning-tabset>
+</template>

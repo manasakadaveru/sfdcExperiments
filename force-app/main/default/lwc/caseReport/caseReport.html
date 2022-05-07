@@ -1,0 +1,48 @@
+<template>
+    
+    <lightning-layout>
+
+        <lightning-layout-item size="8">
+            <div class="slds-box">
+                <div class="slds-box
+                                slds-theme_success
+                                slds-text-heading_medium
+                                slds-align_absolute-center">
+                    Case Report
+                </div>
+
+                <lightning-datatable data={caseList.data} columns={colums}
+                                        key-field="Id" max-row-selection="1"
+                                        onrowselection={handleRowSelection}></lightning-datatable>
+
+            </div>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="4">
+
+                <lightning-card title="Case Details" icon-name="utility:case">
+                    <lightning-record-view-form record-id={caseId} object-api-name="Case">
+                        
+                        <template if:true={caseList}>
+                            <div class="slds-box slds-theme_shade">
+                                <lightning-output-field field-name="CaseNumber"></lightning-output-field>
+                                <lightning-output-field field-name="ContactEmail"></lightning-output-field>
+                                <lightning-output-field field-name="ContactMobile"></lightning-output-field>
+                                <lightning-output-field field-name="ContactPhone"></lightning-output-field>
+                            </div>
+
+                            <div class="slds-box slds-theme_shade">
+                                <lightning-output-field field-name="Reason"></lightning-output-field>
+                                <lightning-output-field field-name="Subject"></lightning-output-field>
+                                <lightning-output-field field-name="Description"></lightning-output-field>
+                            </div>
+                        </template>
+
+                    </lightning-record-view-form>
+                </lightning-card>
+                
+        </lightning-layout-item>
+
+    </lightning-layout>
+
+</template>

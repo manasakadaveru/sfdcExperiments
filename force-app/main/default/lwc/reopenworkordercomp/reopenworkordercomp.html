@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="LdsUpdateRecord" icon-name="standard:record">
+        <div class="slds-m-around_medium">
+            <!--<p class="slds-m-bottom_small">
+                <lightning-button label="Save" onclick={handleLoad}></lightning-button>
+            </p>
+
+            <template if:true={openWO.data}>
+                <template for:each={openWO.data} for:item="woID">
+                    <p key={woID.Id}>{woID.Status__c}</p>
+                </template>
+            </template>
+            
+            <template if:true={error}>
+                <p>ERROR</p>
+            </template>-->
+            <template if:true={Work_Order__c.data}>
+                <lightning-input label="Number" disabled value={Work_Order__c.data.Name}></lightning-input>
+                <lightning-input label="Status" value={Work_Order__c.data.Status__c} data-field="Status__c" onchange={handleChange} class="slds-m-bottom_x-small" required></lightning-input>
+                
+                <lightning-button label="Update WO Status " variant="brand" onclick={updateWorkOrderStatus} disabled={disabled}></lightning-button>
+            </template>
+            <template if:true={Work_Order__c.error}>
+                <!-- handle Apex error -->
+            </template>
+        </div>
+    </lightning-card>
+</template>

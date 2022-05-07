@@ -1,0 +1,10 @@
+.THIS.row {
+    padding: 5px 0;
+    margin-bottom: 15px;
+}
+
+.THIS.row .header {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}

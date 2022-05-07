@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Iterate Map Values Demo">
+        <template if:true={mapOfListValues}>
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered">
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col">
+                            <div title="Key">Country Name (Key)</div>
+                        </th>
+                        <th scope="col">
+                            <div title="Value">Popular City Names (List Values)</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={mapOfListValues} for:item="keyValue">
+                        <tr key={keyValue.key}>
+                            <th scope="col">
+                                <div>{keyValue.key}</div>
+                            </th>
+                            <template for:each={keyValue.value} for:item="value">
+                                <div key={value}>
+                                    <b>{value}</b><br/>
+                                </div>
+                            </template>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+    </lightning-card>
+</template>
